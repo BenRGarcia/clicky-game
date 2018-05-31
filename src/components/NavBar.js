@@ -2,28 +2,17 @@ import React from 'react';
 import { ScoresContainer } from '../containers/ScoresContainer';
 
 const style = {
-  nav: {
-    padding: '1rem',
-    fontSize: '3rem',
-    display: 'flex',
-    justifyContent: 'space-between'
-  },
-  logo: {
-    // justifyContent: 'flex-start'
-  },
-  scores: {
-    // justifyContent: 'flex-end'
-  }
+  nav: { fontSize: '2rem' }
 };
 
 // Stateless Functional Component syntax
 export const NavBar = props => {
   return (
-    <nav style={style.nav}>
-      <span style={style.logo}>
+    <nav className='d-flex justify-content-between p-3' style={style.nav}>
+      <span>
         Clicky Game!
       </span>
-      <span style={style.scores}>
+      <span>
         <ScoresContainer />
       </span>
     </nav>
