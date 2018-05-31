@@ -1,4 +1,4 @@
-export const pokemon = [
+export const pokemons = [
   {
     name: 'ditto',
     src: `url(${require('./ditto.png')})`

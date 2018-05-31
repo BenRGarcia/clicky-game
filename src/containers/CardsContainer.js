@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Cards } from '../components/Cards';
-import { pokemon } from '../pokemon/index';
+import { pokemons } from '../pokemon/index';
 
 // Component Class syntax
 export class CardsContainer extends Component {
   render() {
     return (
-      <Cards />
+      <main>
+        <Cards pokemons={pokemons} />
+      </main>
     );
   }
 }
