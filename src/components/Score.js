@@ -4,7 +4,7 @@ import React from 'react';
 export const Score = props => {
   return (
     <span>
-      Score
+      Score: 0
     </span>
   );
 }
