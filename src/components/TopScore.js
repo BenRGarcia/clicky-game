@@ -4,7 +4,7 @@ import React from 'react';
 export const TopScore = props => {
   return (
     <span>
-      TopScore: 0
+      Top&nbsp;Score:&nbsp;0
     </span>
   );
 }

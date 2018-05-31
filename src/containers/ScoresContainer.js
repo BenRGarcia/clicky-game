@@ -8,7 +8,7 @@ export class ScoresContainer extends Component {
     return (
       <span>
         <Score />
-          &nbsp;|&nbsp;
+        &nbsp;|&nbsp;
         <TopScore />
       </span>
     );
