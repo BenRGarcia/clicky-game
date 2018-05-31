@@ -1,7 +1,7 @@
 import React from 'react';
 
 const style = {
-  backgroundImage: 'url(' + require('../wormz.png') + ')'
+  backgroundImage: `url(${require('../wormz.png')})`
 };
 
 // Stateless Functional Component syntax
