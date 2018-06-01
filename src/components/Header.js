@@ -1,7 +1,7 @@
 import React from 'react';
 
 const style = {
-  backgroundImage: `url(${require('../wormz.png')})`,
+  // backgroundImage: `url(${require('../wormz.png')})`,
   border: '40px solid #000'
 };
 
@@ -10,11 +10,11 @@ export const Header = props => {
   return (
     <header>
       <div
-        className="jumbotron jumbotron-fluid"
+        className="jumbotron jumbotron-fluid bg-white"
         style={style}
       >
         <div className="container">
-          <h1 className="display-2 font-weight-bold">
+          <h1 className="display-3 font-weight-bold">
             Clicky Game!
           </h1>
           <p className="lead font-weight-bold">
