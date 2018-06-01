@@ -14,16 +14,30 @@ export class CardsContainer extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(character) {
-    console.log(`${character} was clicked`)
+  handleClick(char) {
+    return this.charPreviouslyClicked(char)
+      ? this.clearCharsClicked(char)
+      : this.addToCharsClicked(char);
   }
 
-  addToCharsClicked() {
-
+  charPreviouslyClicked(char) {
+    return this.state.charsClicked.includes(char);
   }
 
-  clearCharsClicked() {
+  addToCharsClicked(newChar) {
+    const newArray = this.state.charsClicked;
+    newArray.push(newChar)
+    this.setState({
+      charsClicked: newArray
+    });
+    return this.state.charsClicked
+  }
 
+  clearCharsClicked(char) {
+    this.setState({
+      charsClicked: []
+    });
+    return this.state.charsClicked
   }
 
   render() {
