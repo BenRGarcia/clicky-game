@@ -1,7 +1,7 @@
 import React from 'react';
 
 const style = {
-  border: '5px solid #000',
+  border: '10px solid #000',
   borderRadius: '50%',
   boxShadow: '5px 10px 8px #888888'
 };
