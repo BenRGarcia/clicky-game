@@ -28,6 +28,7 @@ export class Cards extends Component{
           className='col-4 col-md-3 mb-4'
         >
           <img
+            data-pokemon
             src={pokemon.src}
             alt={pokemon.name}
             className='img-fluid'
