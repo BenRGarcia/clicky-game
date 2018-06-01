@@ -9,12 +9,27 @@ export class CardsContainer extends Component {
 
     this.state = {
       charsClicked: [],
+      pokemons: pokemons
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount() {
+    return this.shufflePokemon();
+  }
+
+  shufflePokemon() {
+    const newArray = this.state.pokemons.slice();
+    newArray.sort((a, b) => 0.5 - Math.random());
+    this.setState({
+      pokemons: newArray
+    });
+    return newArray;
+  }
+
   handleClick(char) {
+    this.shufflePokemon();
     return this.charPreviouslyClicked(char)
       ? this.clearCharsClicked(char)
       : this.addToCharsClicked(char);
@@ -43,7 +58,7 @@ export class CardsContainer extends Component {
   render() {
     return (
       <Cards
-        pokemons={pokemons}
+        pokemons={this.state.pokemons}
         onClick={this.handleClick}
       />
     );
