@@ -40,7 +40,7 @@ class App extends Component {
 
   resetScore() {
     this.setState({ score: 0, wiggle: true });
-    setTimeout(() => this.setState({ wiggle: false }), 250);
+    setTimeout(() => this.setState({ wiggle: false }), 500);
   }
 
   addToCharsClicked(newChar) {
