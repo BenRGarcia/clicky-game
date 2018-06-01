@@ -7,16 +7,18 @@ import { Footer } from './components/Footer';
 class App extends Component {
   render() {
     return (
-      <div className='text-center mb-5'>
-        <div className='bg-danger text-white'>
-          <NavBar />
+      <React.StrictMode>
+        <div className='text-center mb-5'>
+          <div className='bg-danger text-white'>
+            <NavBar />
+          </div>
+          <Header />
+          <div className='container'>
+            <CardsContainer />
+          </div>
+          <Footer />
         </div>
-        <Header />
-        <div className='container'>
-          <CardsContainer />
-        </div>
-        <Footer />
-      </div>
+      </React.StrictMode>
     );
   }
 }
