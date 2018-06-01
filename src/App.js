@@ -58,21 +58,12 @@ class App extends Component {
   render() {
     return (
       <React.StrictMode>
-        <div className='text-center mb-5'>
-          <div className='bg-danger text-white'>
-            <NavBar
-              score={this.state.score}
-              topScore={this.state.topScore}
-            />
-          </div>
-          <Header />
-          <div className='container'>
-            <CardsContainer
-              onClick={this.handleClick}
-            />
-          </div>
-          <Footer />
-        </div>
+        <NavBar
+          score={this.state.score}
+          topScore={this.state.topScore} />
+        <Header />
+        <CardsContainer onClick={this.handleClick} />
+        <Footer />
       </React.StrictMode>
     );
   }
