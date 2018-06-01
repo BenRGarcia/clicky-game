@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Cards } from '../components/Cards';
 import { pokemons } from '../pokemon/index';
+import PropTypes from 'prop-types';
 
 // Component Class syntax
 export class CardsContainer extends Component {
@@ -28,31 +29,9 @@ export class CardsContainer extends Component {
     return newArray;
   }
 
-  handleClick(char) {
+  handleClick(characterClicked) {
     this.shufflePokemon();
-    return this.charPreviouslyClicked(char)
-      ? this.clearCharsClicked(char)
-      : this.addToCharsClicked(char);
-  }
-
-  charPreviouslyClicked(char) {
-    return this.state.charsClicked.includes(char);
-  }
-
-  addToCharsClicked(newChar) {
-    const newArray = this.state.charsClicked;
-    newArray.push(newChar);
-    this.setState({
-      charsClicked: newArray
-    });
-    return this.state.charsClicked;
-  }
-
-  clearCharsClicked(char) {
-    this.setState({
-      charsClicked: []
-    });
-    return this.state.charsClicked;
+    this.props.onClick(characterClicked);
   }
 
   render() {
@@ -66,3 +45,7 @@ export class CardsContainer extends Component {
     );
   }
 }
+
+CardsContainer.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
