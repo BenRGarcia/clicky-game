@@ -6,9 +6,7 @@ import { pokemons } from '../pokemon/index';
 export class CardsContainer extends Component {
   render() {
     return (
-      <main>
-        <Cards pokemons={pokemons} />
-      </main>
+      <Cards pokemons={pokemons} />
     );
   }
 }
