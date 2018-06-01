@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { NavBar } from './components/NavBar';
-import { Header } from './components/Header';
-import { CardsContainer } from './containers/CardsContainer';
-import { Footer } from './components/Footer';
+import { NavBar, Header, Footer } from './components/index';
+import { CardsContainer } from './containers/index';
 
-class App extends Component {
+export class App extends Component {
   constructor(props) {
     super(props);
 
@@ -19,8 +17,9 @@ class App extends Component {
   }
 
   handleClick(charClicked) {
-    if (this.state.charsClicked.includes(charClicked)) {
-      this.clearCharsClicked(charClicked)
+    const { charsClicked } = this.state;
+    if (charsClicked.includes(charClicked)) {
+      this.clearCharsClicked()
       this.resetScore()
     } else {
       this.addToCharsClicked(charClicked);
@@ -29,8 +28,7 @@ class App extends Component {
   }
 
   incrementScore() {
-    const score = this.state.score;
-    const topScore = this.state.topScore;
+    const { score, topScore } = this.state;
     const newTopScore = score >= topScore ? score + 1 : topScore;
     this.setState({
       score: score + 1,
@@ -39,20 +37,23 @@ class App extends Component {
   }
 
   resetScore() {
-    this.setState({ score: 0, wiggle: true });
-    setTimeout(() => this.setState({ wiggle: false }), 500);
+    this.setState({
+      score: 0,
+      wiggle: true
+    }, () => (
+      setTimeout(() => this.setState({ wiggle: false }), 500))
+    )
   }
 
   addToCharsClicked(newChar) {
-    const newArray = this.state.charsClicked;
-    newArray.push(newChar);
-    this.setState({ charsClicked: newArray });
-    return this.state.charsClicked;
+    const updatedArray = this.state.charsClicked.slice();
+    updatedArray.push(newChar);
+    this.setState({ charsClicked: updatedArray });
+    return updatedArray;
   }
 
-  clearCharsClicked(char) {
-    this.setState({ charsClicked: [] });
-    return this.state.charsClicked;
+  clearCharsClicked() {
+    return this.setState({ charsClicked: [] });
   }
 
   render() {
@@ -70,5 +71,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
