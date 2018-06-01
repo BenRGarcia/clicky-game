@@ -1,24 +1,23 @@
 import React from 'react';
 
 const style = {
-  // backgroundImage: `url(${require('../wormz.png')})`,
   border: '40px solid #000'
 };
 
 // Stateless Functional Component syntax
 export const Header = props => {
   return (
-    <header>
+    <header className='mb-3'>
       <div
-        className="jumbotron jumbotron-fluid bg-white"
+        className="jumbotron jumbotron-fluid bg-white mb-0"
         style={style}
       >
         <div className="container">
-          <h1 className="display-3 font-weight-bold">
-            Clicky Game!
+          <h1 className="display-4 font-weight-bold">
+            Gotta click&nbsp;'em all!
           </h1>
           <p className="lead font-weight-bold">
-            Click on an image to earn points, but don't click on any more than once!
+            (Just don't click the same one twice)
           </p>
         </div>
       </div>
