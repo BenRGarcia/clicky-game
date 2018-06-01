@@ -11,7 +11,8 @@ class App extends Component {
     this.state = {
       charsClicked: [],
       score: 0,
-      topScore: 0
+      topScore: 0,
+      wiggle: false
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -38,7 +39,8 @@ class App extends Component {
   }
 
   resetScore() {
-    this.setState({ score: 0 });
+    this.setState({ score: 0, wiggle: true });
+    setTimeout(() => this.setState({ wiggle: false }), 250);
   }
 
   addToCharsClicked(newChar) {
@@ -60,7 +62,9 @@ class App extends Component {
           score={this.state.score}
           topScore={this.state.topScore} />
         <Header />
-        <CardsContainer onClick={this.handleClick} />
+        <CardsContainer
+          onClick={this.handleClick}
+          wiggle={this.state.wiggle}/>
         <Footer />
       </React.StrictMode>
     );
