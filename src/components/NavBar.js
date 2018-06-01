@@ -6,14 +6,14 @@ const style = {
   nav: { fontSize: '1.8rem' }
 };
 
-// Stateless Functional Component syntax
 export const NavBar = props => {
   return (
-    <nav className='p-3' style={style.nav}>
+    <nav
+      className='p-3 bg-danger text-white'
+      style={style.nav}>
       <Score
         score={props.score}
-        topScore={props.topScore}
-      />
+        topScore={props.topScore} />
     </nav>
   );
 }

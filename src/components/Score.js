@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// Stateless Functional Component syntax
 export const Score = props => {
   return (
     <span>

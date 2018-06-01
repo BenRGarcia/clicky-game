@@ -3,7 +3,6 @@ import { Cards } from '../components/Cards';
 import { pokemons } from '../pokemon/index';
 import PropTypes from 'prop-types';
 
-// Component Class syntax
 export class CardsContainer extends Component {
   constructor(props) {
     super(props);
@@ -36,12 +35,13 @@ export class CardsContainer extends Component {
 
   render() {
     return (
-      <main className='row'>
-        <Cards
-          pokemons={this.state.pokemons}
-          onClick={this.handleClick}
-        />
-      </main>
+      <div className='container'>
+        <main className='row'>
+          <Cards
+            pokemons={this.state.pokemons}
+            onClick={this.handleClick} />
+        </main>
+      </div>
     );
   }
 }

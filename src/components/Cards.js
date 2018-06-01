@@ -7,7 +7,6 @@ const style = {
   boxShadow: '5px 10px 8px #888888'
 };
 
-// Component Class syntax
 export class Cards extends Component{
   constructor(props) {
     super(props);
@@ -25,16 +24,14 @@ export class Cards extends Component{
       return (
         <div
           key={pokemon.name}
-          className='col-4 col-md-3 mb-4'
-        >
+          className='col-4 col-md-3 mb-4'>
           <img
             data-pokemon
             src={pokemon.src}
             alt={pokemon.name}
             className='img-fluid'
             style={style}
-            onClick={this.handleClick}
-          />
+            onClick={this.handleClick} />
         </div>
       );
     })

@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Stateless Functional Component syntax
 export const Footer = props => {
   return (
     <footer className='bg-danger p-2 fixed-bottom'>
