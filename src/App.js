@@ -7,7 +7,7 @@ import { Footer } from './components/Footer';
 class App extends Component {
   render() {
     return (
-      <div className='text-center'>
+      <div className='text-center mb-5'>
         <div className='bg-success text-white'>
           <NavBar />
         </div>
