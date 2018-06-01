@@ -6,14 +6,14 @@ const style = {
   nav: { fontSize: '1.8rem' }
 };
 
-export const NavBar = props => {
+export const NavBar = ({ score, topScore }) => {
   return (
     <nav
       className='p-3 bg-danger text-white'
       style={style.nav}>
       <Score
-        score={props.score}
-        topScore={props.topScore} />
+        score={score}
+        topScore={topScore} />
     </nav>
   );
 }
