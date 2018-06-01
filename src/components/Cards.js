@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const style = {
   border: '10px solid #000',
@@ -38,10 +39,11 @@ export class Cards extends Component{
       );
     })
 
-    return (
-      <main className='row'>
-        {pokemons}
-      </main>
-    );
+    return pokemons;
   }
 }
+
+Cards.propTypes = {
+  pokemons: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onClick: PropTypes.func.isRequired
+};

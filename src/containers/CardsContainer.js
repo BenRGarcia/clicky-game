@@ -57,10 +57,12 @@ export class CardsContainer extends Component {
 
   render() {
     return (
-      <Cards
-        pokemons={this.state.pokemons}
-        onClick={this.handleClick}
-      />
+      <main className='row'>
+        <Cards
+          pokemons={this.state.pokemons}
+          onClick={this.handleClick}
+        />
+      </main>
     );
   }
 }
