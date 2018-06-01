@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Cards } from '../components/Cards';
+import { Cards } from '../components/index';
 import { pokemons } from '../pokemon/index';
 import PropTypes from 'prop-types';
 
