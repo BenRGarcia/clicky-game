@@ -21,7 +21,6 @@ export class Cards extends Component{
 
   render() {
     const pokemons = this.props.pokemons.map(pokemon => {
-
       return (
         <div
           key={pokemon.name}
@@ -38,6 +37,7 @@ export class Cards extends Component{
         </div>
       );
     })
+
     return (
       <main className='row'>
         {pokemons}
