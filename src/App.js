@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className='text-center mb-5'>
-        <div className='bg-success text-white'>
+        <div className='bg-danger text-white'>
           <NavBar />
         </div>
         <Header />
