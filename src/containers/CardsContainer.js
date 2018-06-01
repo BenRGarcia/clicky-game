@@ -41,18 +41,18 @@ export class CardsContainer extends Component {
 
   addToCharsClicked(newChar) {
     const newArray = this.state.charsClicked;
-    newArray.push(newChar)
+    newArray.push(newChar);
     this.setState({
       charsClicked: newArray
     });
-    return this.state.charsClicked
+    return this.state.charsClicked;
   }
 
   clearCharsClicked(char) {
     this.setState({
       charsClicked: []
     });
-    return this.state.charsClicked
+    return this.state.charsClicked;
   }
 
   render() {
