@@ -22,9 +22,7 @@ export class CardsContainer extends Component {
   shufflePokemon() {
     const newArray = this.state.pokemons.slice();
     newArray.sort((a, b) => 0.5 - Math.random());
-    this.setState({
-      pokemons: newArray
-    });
+    this.setState({ pokemons: newArray });
     return newArray;
   }
 
@@ -34,9 +32,10 @@ export class CardsContainer extends Component {
   }
 
   render() {
+    let classes = `row ${this.props.wiggle ? 'wiggle' : ''}`
     return (
       <div className='container'>
-        <main className='row'>
+        <main className={classes}>
           <Cards
             pokemons={this.state.pokemons}
             onClick={this.handleClick} />
@@ -47,5 +46,6 @@ export class CardsContainer extends Component {
 }
 
 CardsContainer.propTypes = {
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  wiggle: PropTypes.bool.isRequired
 };
