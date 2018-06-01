@@ -2,7 +2,7 @@ import React from 'react';
 
 const style = {
   border: '5px solid #000',
-  borderRadius: '8px',
+  borderRadius: '50%',
   boxShadow: '5px 10px 8px #888888'
 };
 
@@ -12,7 +12,7 @@ export const Cards = props => {
     return (
       <div
         key={pokemon.name}
-        className='col-4 col-md-3 mb-3'
+        className='col-4 col-md-3 mb-4'
       >
         <img
           src={pokemon.src}
