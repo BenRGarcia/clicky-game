@@ -17,41 +17,39 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  incrementScore(newScore) {
+  handleClick(charClicked) {
+    if (this.state.charsClicked.includes(charClicked)) {
+      this.clearCharsClicked(charClicked)
+      this.resetScore()
+    } else {
+      this.addToCharsClicked(charClicked);
+      this.incrementScore();
+    }
+  }
+
+  incrementScore() {
+    const score = this.state.score;
+    const topScore = this.state.topScore;
+    const newTopScore = score >= topScore ? score + 1 : topScore;
     this.setState({
-      score: newScore
+      score: score + 1,
+      topScore: newTopScore
     });
   }
 
-  updateTopScore(newScore) {
-    this.setState({
-      topScore: newScore
-    });
-  }
-
-  handleClick(characterClicked) {
-    return this.charPreviouslyClicked(characterClicked)
-      ? this.clearCharsClicked(characterClicked)
-      : this.addToCharsClicked(characterClicked);
-  }
-
-  charPreviouslyClicked(char) {
-    return this.state.charsClicked.includes(char);
+  resetScore() {
+    this.setState({ score: 0 });
   }
 
   addToCharsClicked(newChar) {
     const newArray = this.state.charsClicked;
     newArray.push(newChar);
-    this.setState({
-      charsClicked: newArray
-    });
+    this.setState({ charsClicked: newArray });
     return this.state.charsClicked;
   }
 
   clearCharsClicked(char) {
-    this.setState({
-      charsClicked: []
-    });
+    this.setState({ charsClicked: [] });
     return this.state.charsClicked;
   }
 
