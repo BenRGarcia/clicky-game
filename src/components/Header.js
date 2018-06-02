@@ -4,7 +4,7 @@ const style = {
   border: '40px solid #000'
 };
 
-const title = `Gotta click&nbsp;'em all!`;
+const title = `Gotta click 'em all!`;
 const subtitle = `(Just don't click the same one twice)`;
 
 export const Header = () => (
