@@ -65,7 +65,7 @@ export class App extends Component {
         <Header />
         <CardsContainer
           onClick={this.handleClick}
-          wiggle={this.state.wiggle}/>
+          wiggle={this.state.wiggle} />
         <Footer />
       </React.StrictMode>
     );
