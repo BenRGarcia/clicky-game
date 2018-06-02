@@ -8,12 +8,6 @@ const style = {
 };
 
 export class Cards extends Component{
-  constructor(props) {
-    super(props);
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
   handleClick(e) {
     const characterClicked = e.target.alt;
     this.props.onClick(characterClicked);
@@ -21,17 +15,18 @@ export class Cards extends Component{
 
   render() {
     const pokemons = this.props.pokemons.map(pokemon => {
+      const { name, src } = pokemon;
       return (
         <div
-          key={pokemon.name}
+          key={name}
           className='col-4 col-md-3 mb-4'>
           <img
             data-pokemon
-            src={pokemon.src}
-            alt={pokemon.name}
+            src={src}
+            alt={name}
             className='img-fluid'
             style={style}
-            onClick={this.handleClick} />
+            onClick={(e) => this.handleClick(e)} />
         </div>
       );
     })
